@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="../dist/output.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de rotina e estudos</title>
+</head>
+<body>
+    <header class="header-principal">
+        <h1 class="titulo-painel">Painel de rotina e estudos</h1>
+        <div class="grupo-botoes">
+        <button type="button" class="btn-tema" id="light">☀️ light</button>
+        <button type="button" class="btn-tema" id="dark">🌕 dark</button>
+        </div>
+    </header>
+
+    <main>
+    <section id="form-section" class="sessao-formulario">
+        <h2 class="subtitulo-sessao>">Nova Tarefa:</h2>
+        <form id="task-form" class="form-cadastro">
+            <div class="campo-form-inteiro">
+                <label for="task-name">Nome da Tarefa:</label>
+                <input type="text" id="task-name" placeholder="Estudar rotas no React">
+            </div>
+            
+            <div class="campo-form">
+                <label for="task-tech">Tecnologia</label>
+                <select id="task-tech">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JAVASCRIPT</option>
+                    <option value="python">PYTHON</option>
+                </select>
+            </div>
+            <div class="campo-form">
+                <label for="task-priority">Prioridade</label>
+                <select id="task-tech">
+                    <option value="low">BAIXA</option>
+                    <option value="medium">MEDIA</option>
+                    <option value="high">ALTA</option>                
+                </select>
+            </div>
+                <div class="campor-form">
+                <label for="task-status">Status</label>
+                <select id="task-tech">
+                    <option value="pendente">Pendente</option>
+                    <option value="fazendo">Fazendo</option>
+                    <option value="feito">Feito</option>                
+                </select>
+            </div>
+            <div class="campor-form">
+                <label for="task-hours">Horas Estimadas</label>
+                <input type="number" id="task-hours" min="1" placeholder="2">
+            </div>
+            <div class="container-botao-form">
+                <button type="submit" class="btn-adicionar">Adicionar Tarefa</button>
+            </div>
+        </form>
+    </section>
+    <section id="filters" class="sessao-filtros">
+        <h2 class="subtitulo-sessao">FILTROS</h2>
+        <div class="grid-filtros">
+            <div class="campo-filtros">
+                <label for="filter-tech">Tecnologia</label>
+                <select  id="filter-tech">
+                    <option value="todos">TODAS</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JAVASCRIPT</option>
+                    <option value="python">PYTHON</option>
+                </select>
+            </div>
+            <div class="campo-filtros">
+                <label for="filter-status">Status</label>
+                <select  id="filter-status">
+                    <option value="todos">TODAS</option>
+                    <option value="pendente">PENDENTE</option>
+                    <option value="fazendo">FAZENDO</option>
+                    <option value="feito">FEITO</option>
+                </select>
+            </div>
+            <div class="campo-filtros">
+                <label for="filter-priority">Prioridade</label>
+                <select  id="filter-tech">
+                    <option value="todos">TODAS</option>
+                    <option value="baixa">BAIXA</option>
+                    <option value="media">MEDIA</option>
+                    <option value="alta">ALTA</option>
+                </select>
+            </div>
+
+        </div>
+    </section>
+    <section id="cards-section"></section>
+    </main>
+</body>
+</html>

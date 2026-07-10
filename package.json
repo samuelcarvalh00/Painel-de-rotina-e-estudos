@@ -1,0 +1,40 @@
+{
+  "name": "programaciones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^10.5.2",
+    "baseline-browser-mapping": "^2.10.42",
+    "browserslist": "^4.28.5",
+    "caniuse-lite": "^1.0.30001803",
+    "electron-to-chromium": "^1.5.389",
+    "escalade": "^3.2.0",
+    "fraction.js": "^5.3.4",
+    "nanoid": "^3.3.15",
+    "node-releases": "^2.0.51",
+    "picocolors": "^1.1.1",
+    "postcss": "^8.5.16",
+    "postcss-value-parser": "^4.2.0",
+    "source-map-js": "^1.2.1",
+    "tailwindcss": "^4.3.2",
+    "update-browserslist-db": "^1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelcarvalh00/csv_dados.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/samuelcarvalh00/csv_dados/issues"
+  },
+  "homepage": "https://github.com/samuelcarvalh00/csv_dados#readme"
+}
