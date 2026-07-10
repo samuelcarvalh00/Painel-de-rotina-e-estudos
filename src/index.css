@@ -63,3 +63,27 @@
 .btn-adicionar{
     @apply text-white bg-blue-400 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500
 }
+
+.sessao-filtros{
+    @apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm
+}
+
+.grid-filtros{
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-4
+}
+
+.campo-filtros{
+    @apply flex flex-col gap-3
+}
+
+.campo-filtros select{
+    @apply w-full bg-gray-500 border-gray-700 text-gray-100 text-sm rounded-lg p-2.5 outline-none transition-all
+}
+
+.campo-filtros select::focus{
+     @apply border-blue-500 bg-gray-900 ring-4 ring-blue-900/30
+}
+
+.campo-filtros label{
+    @apply text-xs font-semibold text-gray-500 uppercase tracking-wider
+}
