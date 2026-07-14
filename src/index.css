@@ -5,6 +5,9 @@
 .header-principal{
     @apply flex justify-between items-center p-2.5 border-b border-gray-300;
 }
+.subtitulo-sessao {
+    @apply text-xl font-bold text-gray-800 text-center mb-6 pb-2 border-b border-gray-100;
+}
 
 .titulo-painel{
     @apply text-lg font-semibold
@@ -33,6 +36,7 @@
 .form-cadastro{
     @apply grid grid-cols-1 md:grid-cols-4 gap-4 items-end
 }
+
 
 .campo-form-inteiro{
     @apply flex flex-col gap-1.5 grid-cols-1 md:col-span-4
@@ -86,4 +90,40 @@
 
 .campo-filtros label{
     @apply text-xs font-semibold text-gray-500 uppercase tracking-wider
+}
+
+.sessao-cards{
+    @apply mt-6
+}
+
+.cards-grid{
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4
+}
+
+.card-tarefa{
+    @apply bg-cyan-50 p-5 rounded-xl border border-gray-200 shadow-xs flex flex-col gap-2 hover:shadow-md transition-shadow
+}
+
+.card-header{
+    @apply flex justify-between items-start gap-2
+}
+
+.card-header h3{ 
+    @apply font-bold text-gray-800 text-xl
+}
+
+.card-info{
+    @apply text-sm text-gray-600
+}
+
+.card-footer{
+    @apply mt-2 pt-2 border-t border-gray-100 flex justify-between items-center
+}
+
+.badge-alta{
+    @apply bg-red-100 text-red-800 text-lg font-semibold px-2.5 py-0.5 rounded-full
+}
+
+.badge-fazendo{
+    @apply bg-amber-100 text-amber-800 text-lg font-semibold px-2.5 py-0.5 rounded-full
 }
