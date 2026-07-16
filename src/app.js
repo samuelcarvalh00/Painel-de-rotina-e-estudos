@@ -3,10 +3,16 @@ let cardsgrid = document.querySelector('.cards-grid')
 
 let taskslist = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
 
-function renderizarcards(){
+function renderizarcards(listadetarefas = taskslist
+){
     cardsgrid.innerHTML = ''
 
-    taskslist.forEach(task => {
+    if(listadetarefas.length === 0){
+        cardsgrid.innerHTML = `<p class="text-gray-500 text-center col-span-full py-8">Nenhuma tarefa foi encontrada com esses filtros.</p>`
+        return
+    }
+
+    listadetarefas.forEach(task => {
         const card = document.createElement('div')
         card.className = 'card-tarefa'
         card.innerHTML = `<div class="card-header">
@@ -57,6 +63,29 @@ const taskhours = document.getElementById('task-hours').value
 renderizarcards()
 
 alert("Tarefa adicionada com sucesso", newtask)
-alert("lista completa de tarefas", taskslist)
+
 })
 renderizarcards()
+
+let aplicarfiltros = () => {
+    const filtrotech = document.getElementById('filter-tech').value
+      const filtrostatus = document.getElementById('filter-status').value
+        const filtropriority= document.getElementById('filter-priority').value
+            const tarefasfiltradas = taskslist.filter(task => {
+                const batetech = filtrotech === 'todos' || task.tech === filtrotech
+                const batestatus = filtrostatus === 'todos' || task.status === filtrostatus
+                let priorityconvertida = task.priority
+                if(filtropriority === 'baixa') priorityconvertida = 'low'
+                if(filtropriority === 'media') priorityconvertida = 'medium'
+                if(filtropriority === 'alta') priorityconvertida = 'high'
+                const batepriority = filtropriority === 'todos' || priorityconvertida === filtropriority
+                
+                return batetech && batestatus && batepriority
+            })
+
+
+renderizarcards(tarefasfiltradas)
+}
+
+const btnfiltrar = document.getElementById('btn-filtro')
+btnfiltrar.addEventListener('click',aplicarfiltros)

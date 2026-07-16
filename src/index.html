@@ -81,17 +81,22 @@
                 </select>
             </div>
             <div class="campo-filtros">
-                <label for="filter-priority">Prioridade</label>
-                <select  id="filter-tech">
-                    <option value="todos">TODAS</option>
-                    <option value="baixa">BAIXA</option>
-                    <option value="media">MEDIA</option>
-                    <option value="alta">ALTA</option>
-                </select>
-            </div>
-
+            <label for="filter-priority">Prioridade</label>
+            <select id="filter-priority">
+                <option value="todos">TODAS</option>
+                <option value="baixa">BAIXA</option>
+                <option value="media">MEDIA</option>
+                <option value="alta">ALTA</option>
+            </select>
         </div>
-    </section>
+    </div>
+
+    <div class="flex justify-center mt-6">
+        <button class="btn-filtrar" type="button" id="btn-filtro">FILTRAR</button>
+    </div>
+
+</section>
+
     <section id="cards-grid-section" class="sessao-cards">
         <h2 class="subtitulo-sessao">Minhas Tarefas</h2>
         <div class="cards-grid">
