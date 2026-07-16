@@ -2,12 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html, body {
+    @apply min-h-screen;
+}
+
 .header-principal{
-    @apply flex justify-between items-center p-2.5 border-b border-gray-300;
+    @apply flex justify-between items-center p-2.5 border-b border-gray-300 dark:border-gray-700 dark:text-white;
 }
+
 .subtitulo-sessao {
-    @apply text-xl font-bold text-gray-800 text-center mb-6 pb-2 border-b border-gray-100;
-}
+@apply text-xl font-bold text-gray-800 text-center mb-6 pb-2 border-b border-gray-100 dark:border-gray-800 dark:text-gray-200;}
 
 .titulo-painel{
     @apply text-lg font-semibold
@@ -21,17 +25,16 @@
     @apply flex items-center gap-1 cursor-pointer
 }
 
-#light {
+#btn-light {
     @apply text-gray-900 bg-white box-border border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none cursor-pointer transition-colors;
 }
 
-#dark {
+#btn-dark {
     @apply text-white bg-gray-800 box-border border border-transparent hover:bg-gray-900 focus:ring-4 focus:ring-gray-700 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none cursor-pointer transition-colors;
 }
 
 .sessao-formulario{
-    @apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm uppercase 
-}
+@apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm uppercase dark:bg-gray-800 dark:border-gray-700;}
 
 .form-cadastro{
     @apply grid grid-cols-1 md:grid-cols-4 gap-4 items-end
@@ -69,8 +72,7 @@
 }
 
 .sessao-filtros{
-    @apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm
-}
+@apply bg-white p-5 rounded-xl border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700;}
 
 .grid-filtros{
     @apply grid grid-cols-1 sm:grid-cols-3 gap-4
@@ -103,20 +105,17 @@
 }
 
 .card-tarefa{
-    @apply bg-cyan-50 p-5 rounded-xl border border-gray-200 shadow-xs flex flex-col gap-2 hover:shadow-md transition-shadow
-}
+@apply bg-cyan-50 p-5 rounded-xl border border-gray-200 shadow-xs flex flex-col gap-2 hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700;}
 
 .card-header{
     @apply flex justify-between items-start gap-2
 }
 
 .card-header h3{ 
-    @apply font-bold text-gray-800 text-xl
-}
+@apply font-bold text-gray-800 text-xl dark:text-white;}
 
 .card-info{
-    @apply text-sm text-gray-600
-}
+@apply text-sm text-gray-600 dark:text-gray-300;}
 
 .card-footer{
     @apply mt-2 pt-2 border-t border-gray-100 flex justify-between items-center

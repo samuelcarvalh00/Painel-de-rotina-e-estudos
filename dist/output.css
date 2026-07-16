@@ -211,6 +211,9 @@
   .justify-center {
     justify-content: center;
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
@@ -224,8 +227,20 @@
   .text-gray-500 {
     color: var(--color-gray-500);
   }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
   .text-red-600 {
     color: var(--color-red-600);
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
   }
   .hover\:text-red-800 {
     &:hover {
@@ -234,6 +249,19 @@
       }
     }
   }
+  .dark\:bg-gray-900 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-gray-900);
+    }
+  }
+  .dark\:text-gray-100 {
+    &:where(.dark, .dark *) {
+      color: var(--color-gray-100);
+    }
+  }
+}
+html, body {
+  min-height: 100vh;
 }
 .header-principal {
   display: flex;
@@ -243,6 +271,12 @@
   border-bottom-width: 1px;
   border-color: var(--color-gray-300);
   padding: calc(var(--spacing) * 2.5);
+  &:where(.dark, .dark *) {
+    border-color: var(--color-gray-700);
+  }
+  &:where(.dark, .dark *) {
+    color: var(--color-white);
+  }
 }
 .subtitulo-sessao {
   margin-bottom: calc(var(--spacing) * 6);
@@ -256,6 +290,12 @@
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-800);
+  &:where(.dark, .dark *) {
+    border-color: var(--color-gray-800);
+  }
+  &:where(.dark, .dark *) {
+    color: var(--color-gray-200);
+  }
 }
 .titulo-painel {
   font-size: var(--text-lg);
@@ -273,7 +313,7 @@
   align-items: center;
   gap: var(--spacing);
 }
-#light {
+#btn-light {
   box-sizing: border-box;
   cursor: pointer;
   border-radius: var(--radius-lg);
@@ -312,7 +352,7 @@
     outline-style: none;
   }
 }
-#dark {
+#btn-dark {
   box-sizing: border-box;
   cursor: pointer;
   border-radius: var(--radius-lg);
@@ -361,6 +401,12 @@
   text-transform: uppercase;
   --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  &:where(.dark, .dark *) {
+    border-color: var(--color-gray-700);
+  }
+  &:where(.dark, .dark *) {
+    background-color: var(--color-gray-800);
+  }
 }
 .form-cadastro {
   display: grid;
@@ -470,6 +516,12 @@
   padding: calc(var(--spacing) * 5);
   --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  &:where(.dark, .dark *) {
+    border-color: var(--color-gray-700);
+  }
+  &:where(.dark, .dark *) {
+    background-color: var(--color-gray-800);
+  }
 }
 .grid-filtros {
   display: grid;
@@ -589,6 +641,12 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+  &:where(.dark, .dark *) {
+    border-color: var(--color-gray-700);
+  }
+  &:where(.dark, .dark *) {
+    background-color: var(--color-gray-800);
+  }
 }
 .card-header {
   display: flex;
@@ -602,11 +660,17 @@
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-800);
+  &:where(.dark, .dark *) {
+    color: var(--color-white);
+  }
 }
 .card-info {
   font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-sm--line-height));
   color: var(--color-gray-600);
+  &:where(.dark, .dark *) {
+    color: var(--color-gray-300);
+  }
 }
 .card-footer {
   margin-top: calc(var(--spacing) * 2);
@@ -639,6 +703,10 @@
   --tw-font-weight: var(--font-weight-semibold);
   font-weight: var(--font-weight-semibold);
   color: var(--color-amber-800);
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -725,6 +793,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-duration: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-leading: initial;

@@ -89,3 +89,30 @@ renderizarcards(tarefasfiltradas)
 
 const btnfiltrar = document.getElementById('btn-filtro')
 btnfiltrar.addEventListener('click',aplicarfiltros)
+
+
+const btnlight = document.getElementById('btn-light')
+const btndark = document.getElementById('btn-dark')
+const htmlelement = document.documentElement
+
+let aplicartema = (tema) =>{
+    if(tema === 'dark'){
+        htmlelement.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+    } else{
+         htmlelement.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+    }
+}
+
+const temasalvo = localStorage.getItem('theme')
+
+if(temasalvo){
+    aplicartema(temasalvo)
+}else{
+    aplicartema('dark')
+}
+
+
+btnlight.addEventListener('click', () => aplicartema('light'))
+btndark.addEventListener('click', () => aplicartema('dark'))
