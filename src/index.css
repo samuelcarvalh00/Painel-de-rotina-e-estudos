@@ -2,12 +2,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* --- Reset e Base (Suporta Light e Dark) --- */
+
 html, body {
     @apply min-h-screen font-sans antialiased bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300;
 }
 
-/* --- Header Principal --- */
+
 .header-principal {
     @apply flex justify-between items-center py-6 border-b border-slate-200 dark:border-slate-800;
 }
@@ -20,7 +20,7 @@ html, body {
     @apply flex gap-3;
 }
 
-/* --- Alternador de Tema --- */
+
 #btn-light {
     @apply text-slate-800 bg-white border border-slate-300 hover:bg-slate-100 dark:text-slate-300 dark:bg-slate-800/60 dark:border-slate-700 dark:hover:bg-slate-700 dark:hover:text-white font-medium rounded-xl text-sm px-4 py-2.5 transition-all cursor-pointer shadow-sm;
 }
@@ -34,7 +34,7 @@ html, body {
     @apply text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase text-left mb-6 pb-2 border-b border-slate-200 dark:border-slate-800/60 w-full;
 }
 
-/* --- Contêineres de Seções --- */
+
 .sessao-formulario,
 .sessao-filtros,
 .sessao-progresso {
@@ -87,7 +87,6 @@ html, body {
     @apply md:col-start-2 md:col-span-1 justify-self-center mt-4;
 }
 
-/* --- Painel de Indicadores --- */
 .sessao-progresso .grid {
     @apply grid grid-cols-1 md:grid-cols-3 gap-4;
 }
