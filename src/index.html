@@ -7,7 +7,8 @@
     <title>Painel de rotina e estudos</title>
 </head>
 <body class="bg-gray-100 text-gray-900 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
-    <header class="header-principal" >
+    <div class="max-w-5xl mx-auto px-3 py-8 space-y-8">
+    <header class="header-principal sticky top-0 z-50 bg-slate-50/90 dark:bg-slate-900/90 backdrop-blur-md" >
         <h1 class="titulo-painel">Painel de rotina e estudos</h1>
         <div class="grupo-botoes">
         <button type="button" class="btn-tema" id="btn-light">☀️ light</button>
@@ -96,7 +97,28 @@
     </div>
 
 </section>
+    <section id="progresso-section" class="sessao-progresso">
+        <h2 class="subtitulo-sessao">Painel de Indicadores</h2>
+        <div class="grid">
+            <div class="card-indicador">
+                <h3>
+                    Progresso Geral:
+                </h3>
+                <p id="progresso-geral">Total: 0 | Feitas 0 (0%)</p>
+            </div>
+            <div class="card-indicador">
+                <h3>Horas por Tecnologia: </h3>
+                <div id="horas-tecnologia" class="text-sm space-y-1">
 
+                </div>
+            </div>
+            <div class="card-indicador">
+                <h3>Tarefas por Prioridade:</h3>
+                <p id="total-prioridades">Alta: 0 | Média: 0 | Baixa: 0</p>
+            </div>
+        </div>
+
+    </section>
     <section id="cards-grid-section" class="sessao-cards">
         <h2 class="subtitulo-sessao">Minhas Tarefas</h2>
         <div class="cards-grid">
@@ -116,5 +138,6 @@
     </section>
     </main>
     <script src="app.js"></script>
+    </div>
 </body>
 </html>
