@@ -178,3 +178,5 @@ pPrioridades.textContent = `Alta: ${alta} | Média: ${media} | Baixa: ${baixa}`
 
 renderizarcards(tarefasfiltradas)
 atualizarpainelprogresso()
+
+
