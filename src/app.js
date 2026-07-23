@@ -100,7 +100,7 @@ let aplicarfiltros = () => {
                 
                 return batetech && batestatus && batepriority
             })
-
+renderizarcards(tarefasfiltradas)
 }
 
 const btnfiltrar = document.getElementById('btn-filtro')
@@ -176,7 +176,41 @@ pPrioridades.textContent = `Alta: ${alta} | Média: ${media} | Baixa: ${baixa}`
 }
 
 
-renderizarcards(tarefasfiltradas)
+
+
+function exportarparacsv(){
+    if(taskslist.length === 0){
+        alert("Não há tarefas para exportar")
+        return
+    }
+
+
+const cabecalho = ["id","name","tech","priority","status","hours"]
+
+const linhas = taskslist.map(task => [
+    task.id,
+    `"${task.name.replace(/"/g, '""')}"`, 
+        `"${task.tech}"`,
+        `"${task.priority}"`,
+        `"${task.status}"`,
+        task.hours
+    ].join(","));
+
+let conteudocsv = [cabecalho.join(","), ...linhas].join("\n")
+
+const blob = new Blob([conteudocsv], {type: "text/csv;charset-utf-8;"})
+const url = URL.createObjectURL(blob)
+
+const linkinvisivel = document.createElement("a")
+linkinvisivel.setAttribute("href", url)
+linkinvisivel.setAttribute("download", `tarefas_${Date.now()}.csv`)
+document.body.appendChild(linkinvisivel)
+
+linkinvisivel.click()
+document.body.removeChild(linkinvisivel)
+
+}
+document.getElementById("btn-exportar-csv")?.addEventListener("click", exportarparacsv)
+
+renderizarcards()
 atualizarpainelprogresso()
-
-
